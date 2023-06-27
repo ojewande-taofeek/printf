@@ -13,6 +13,8 @@ int (*f_caller(char check))(va_list)
 		{'c', put_char},
 		{'s', put_str},
 		{'%', put_mod},
+		{'d', put_digits},
+		{'i', put_digits},
 		{'\0', NULL}
 	};
 	int idx = 0;

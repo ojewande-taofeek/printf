@@ -31,10 +31,12 @@ int put_char(va_list printf_arg);
 int put_str(va_list printf_arg);
 int put_mod(va_list printf_arg);
 int (*f_caller(char check))(va_list);
-
+int put_digits(va_list printf_arg);
 /* SYMBOLIC CONSTANTS */
 #define UNUSED(x) (void)(x)
-
+#define DIV_INT (1)
+#define DIV_CHECK (10)
+#define DIV_MIN (0)
 
 
 #endif /* MAIN_H */
