@@ -34,7 +34,7 @@ int (*f_caller(char check))(va_list);
 int put_digits(va_list printf_arg);
 /* SYMBOLIC CONSTANTS */
 #define UNUSED(x) (void)(x)
-#define DIV_INT (1)
+#define DIV_INIT (1)
 #define DIV_CHECK (10)
 #define DIV_MIN (0)
 

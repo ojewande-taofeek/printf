@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			idx++;
 			check = format[idx];
 			if (check == 'c' || check == 's' || check == '%' ||
-				check == 'd' || check 'i')
+				check == 'd' || check == 'i')
 
 				len += f_caller(check)(printf_arg);
 		}

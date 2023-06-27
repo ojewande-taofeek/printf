@@ -76,7 +76,7 @@ int put_digits(va_list printf_arg)
 	if (num < 0)
 	{
 		p_n = '_';
-		write(1, &p_n 1);
+		write(1, &p_n, 1);
 		len++;
 		n = -num;
 	}
