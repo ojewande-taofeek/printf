@@ -61,7 +61,7 @@ int put_mod(va_list printf_arg)
 }
 
 /**
- * put_digits - The function that prints number
+ * put_digits - The function that prints numbers
  * @printf_arg: The va_list
  * Return: len, length of printed number(s)
  */
@@ -75,7 +75,7 @@ int put_digits(va_list printf_arg)
 	num = va_arg(printf_arg, int);
 	if (num < 0)
 	{
-		p_n = '_';
+		p_n = '-';
 		write(1, &p_n, 1);
 		len++;
 		n = -num;
@@ -87,10 +87,10 @@ int put_digits(va_list printf_arg)
 	while (div > DIV_MIN)
 	{
 		p_n = (n / div) + '0';
+		write(1, &p_n, 1);
 		len++;
 		n %= div;
 		div /= DIV_CHECK;
 	}
 	return (len);
 }
-
