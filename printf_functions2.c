@@ -15,7 +15,7 @@ int put_binary(va_list printf_arg)
 	int len = 0;
 
 	num = va_arg(printf_arg, unsigned int);
-	if (num)
+	if (num >= 0)
 	{
 		return (print_bin(num, &len));
 	}
