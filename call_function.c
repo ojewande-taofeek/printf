@@ -16,6 +16,10 @@ int (*f_caller(char check))(va_list)
 		{'d', put_digits},
 		{'i', put_digits},
 		{'b', put_binary},
+		{'u', put_unsigned},
+		{'o', put_octal},
+		{'x', put_hexalower},
+		{'X', put_hexaupper},
 		{'\0', NULL}
 	};
 	int idx = 0;

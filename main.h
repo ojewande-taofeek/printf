@@ -33,6 +33,15 @@ int put_mod(va_list printf_arg);
 int put_digits(va_list printf_arg);
 int put_binary(va_list printf_arg);
 int print_bin(unsigned int, int *);
+int put_unsigned(va_list printf_arg);
+int put_octal(va_list printf_arg);
+int print_octal(unsigned int, int *);
+int put_hexalower(va_list printf_arg);
+int print_hexalower(unsigned int num, int *len);
+int put_hexaupper(va_list printf_arg);
+int print_hexaupper(unsigned int num, int *len);
+
+
 int (*f_caller(char check))(va_list);
 
 /* SYMBOLIC CONSTANTS */
