@@ -32,7 +32,7 @@ int put_str(va_list printf_arg);
 int put_mod(va_list printf_arg);
 int put_digits(va_list printf_arg);
 int put_binary(va_list printf_arg);
-int print_bin(int, int *);
+int print_bin(unsigned int, int *);
 int (*f_caller(char check))(va_list);
 
 /* SYMBOLIC CONSTANTS */
