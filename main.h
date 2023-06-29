@@ -1,4 +1,3 @@
-
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -40,6 +39,8 @@ int put_hexalower(va_list printf_arg);
 int print_hexalower(unsigned int num, int *len);
 int put_hexaupper(va_list printf_arg);
 int print_hexaupper(unsigned int num, int *len);
+int put_Str(va_list printf_arg);
+int print_hexaupper_str(int num, int *len_p);
 
 
 int (*f_caller(char check))(va_list);

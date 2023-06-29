@@ -20,6 +20,7 @@ int (*f_caller(char check))(va_list)
 		{'o', put_octal},
 		{'x', put_hexalower},
 		{'X', put_hexaupper},
+		{'S', put_Str},
 		{'\0', NULL}
 	};
 	int idx = 0;
