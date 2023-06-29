@@ -4,6 +4,8 @@ int put_hexalower(va_list printf_arg);
 int print_hexalower(unsigned int num, int *len);
 int put_hexaupper(va_list printf_arg);
 int print_hexaupper(unsigned int num, int *len);
+int put_Str(va_list printf_arg);
+int print_hexaupper_str(int num, int *len_p);
 
 /**
  * put_hexalower - The function that hexadecimal lower
@@ -127,3 +129,40 @@ int print_hexaupper(unsigned int num, int *len_p)
 	(*len_p)++;
 	return (*len_p);
 }
+
+
+/**
+ * put_Str - The function that print special characters
+ * @printf_arg: The va_list
+ * Return: len;
+ */
+int put_Str(va_list printf_arg)
+{
+	char *str, x[2] = {'\\', 'x'};
+	int idx = 0, j, ch, len = 0, len_hu, len_idx;
+
+	str = va_arg(printf_arg, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	while (str[idx] != '\0')
+	{
+		if ((str[idx] < 32 && str[idx] > 0) || str[idx] >= 127)
+		{
+			ch = str[idx];
+			for (j = 0; j < 2; j++, len++)
+				write(1, &x[j], 1);
+			len_idx = 0;
+			len_hu = print_hexaupper_str(ch, &len_idx);
+			len += len_hu;
+		}
+		else
+		{
+			write(1, &str[idx], 1);
+			len++;
+		}
+		idx++;
+	}
+	return (len);
+}
+

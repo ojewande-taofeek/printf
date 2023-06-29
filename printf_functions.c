@@ -4,6 +4,7 @@ int put_char(va_list printf_arg);
 int put_str(va_list printf_arg);
 int put_mod(va_list printf_arg);
 int put_digits(va_list printf_arg);
+int print_hexaupper_str(int num, int *len_p);
 
 /**
  * put_char - The function that prints characters
@@ -93,4 +94,47 @@ int put_digits(va_list printf_arg)
 		div /= DIV_CHECK;
 	}
 	return (len);
+}
+
+
+/**
+ * print_hexaupper_str - The function that prints the upper hexa number
+ *               and returns its len
+ * @num: The decimal based number to be converted to upper hexa
+ * @len_p: The pointer to int len of the printed upper hexadecimal
+ * Return: len
+ */
+int print_hexaupper_str(int num, int *len_p)
+{
+	int n, ch1[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int ch2[6] = {10, 11, 12, 13, 14, 15};
+	char p_hu, letters[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
+	int idx;
+
+	if (num > 0)
+	{
+		print_hexaupper_str((num / 16), len_p);
+	}
+	n = num % 16;
+	for (idx = 0; idx < 10; idx++)
+	{
+		if (n == ch1[idx])
+		{
+			p_hu = n + '0';
+			write(1, &p_hu, 1);
+			break;
+		}
+	}
+	idx = 0;
+	while (idx < 6)
+	{
+		if (n == ch2[idx])
+		{
+			write(1, &letters[idx], 1);
+			break;
+		}
+		idx++;
+	}
+	(*len_p)++;
+	return (*len_p);
 }

@@ -5,6 +5,7 @@ int print_bin(unsigned int num, int *len);
 int put_octal(va_list printf_arg);
 int print_octal(unsigned int num, int *len);
 
+
 /**
  * put_binary - The function that prints binary
  * @printf_arg: The va_list
