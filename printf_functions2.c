@@ -14,11 +14,11 @@ int put_binary(va_list printf_arg)
 	int num, len = 0;
 
 	num = va_arg(printf_arg, unsigned int);
-	if (num >= 0)
+	if (num)
 	{
 		return (print_bin(num, &len));
 	}
-	return (0);
+	return (-1);
 }
 
 /**
