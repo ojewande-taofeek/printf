@@ -18,7 +18,7 @@ int put_binary(va_list printf_arg)
 	{
 		return (print_bin(num, &len));
 	}
-	return (-1);
+	return (0);
 }
 
 /**
