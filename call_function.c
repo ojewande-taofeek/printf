@@ -21,6 +21,8 @@ int (*f_caller(char check))(va_list)
 		{'x', put_hexalower},
 		{'X', put_hexaupper},
 		{'S', put_Str},
+		{'r', put_reversed_str},
+		{'R', put_rot13},
 		{'\0', NULL}
 	};
 	int idx = 0;

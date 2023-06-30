@@ -41,6 +41,11 @@ int put_hexaupper(va_list printf_arg);
 int print_hexaupper(unsigned int num, int *len);
 int put_Str(va_list printf_arg);
 int print_hexaupper_str(int num, int *len_p);
+int put_pointer(va_list printf_arg);
+int _strlen(char *s);
+int put_reversed_str(va_list printf_arg);
+int put_rot13(va_list printf_arg);
+
 
 
 int (*f_caller(char check))(va_list);

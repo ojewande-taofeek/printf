@@ -26,7 +26,9 @@ int _printf(const char *format, ...)
 					|| check == 'd' || check == 'i'
 					|| check == 'b' || check == 'u'
 					|| check == 'o' || check == 'x' ||
-					check == 'X' || check == 'S')
+					check == 'X' || check == 'S' ||
+					check == 'p' || check == 'r' ||
+					check == 'R')
 				len += f_caller(check)(printf_arg);
 		}
 		else
